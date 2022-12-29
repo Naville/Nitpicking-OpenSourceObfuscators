@@ -43,3 +43,14 @@ MBA should be used here directly, instead of relying on another standalone pass 
 
 Loading from an unitialized memory (the alloca without store), is an UB and will trigger bugs like [54545](https://github.com/llvm/llvm-project/issues/54545) if no extra steps are done to take care of it. I can now safely say no such step is done properly
 
+### Substitution
+
+The rules are way too naive to an extent that it's laughable
+
+### MBA
+The input variables are implemented as a load from GV, which is trivially foldable by IDA, making it next to useless
+
+### VariableSubstituion
+
+Combined all the weakness from Sub and MBA
+
