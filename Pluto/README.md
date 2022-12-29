@@ -34,3 +34,12 @@ Plus, if ``InlineAsm`` is written with proper constraints, BCF won't break them,
 
 MBA should be used here directly, instead of relying on another standalone pass (which is also retarded, which we'll elaborate later.)
 
+### GlobalEncryption
+
+- Decrypt all GlobalVariables in constructor provides next to no protection at all.
+- Module Constructors are not always the first user-related code to run, Objective-C runtime initialization takes place before the ctor, which results in Objective-C constructed from obfuscated strings, hence completely broke the program.
+
+### RandomControlFlow
+
+Loading from an unitialized memory (the alloca without store), is an UB and will trigger bugs like [54545](https://github.com/llvm/llvm-project/issues/54545) if no extra steps are done to take care of it. I can now safely say no such step is done properly
+
