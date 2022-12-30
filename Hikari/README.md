@@ -1,5 +1,5 @@
 # Hikari
-We'll be using [NeHyci's fork](https://github.com/NeHyci/Hanabi) as our evaluation target
+We'll be using [NeHyci's fork]([https://github.com/NeHyci/Hanabi](https://github.com/NeHyci/Hikari-LLVM15)) as our evaluation target
 
 ## Version
 This is based off current HEAD ``c11086f461d62974d3e8b01bb39af2608284430c``
